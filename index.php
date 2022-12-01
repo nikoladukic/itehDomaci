@@ -55,30 +55,36 @@
             </div>
         </div>
     </nav>
-
     <!-- Page Content -->
+    
     <div class="container">
-        <div class="card border-0 shadow my-5" style="background-color:lightgray;">
-            <div class="card-body p-4">
-                <h1 class="fw-light"><b>Dobro došli na sajt</b> </h1>
-                <p class="lead">Na ovom sajtu možete se informisati o lekovima koji postoje u apotekama, i mozete naruciti druge lekove.
 
-                Izborom apoteke za koje naručujete lekove započinjete proces nabavke.
-                Zatim u okviru kartice lekovi, birate željene lekove i njihove količine i klikom na Završi obavili ste datu narudžbinu.
-                Lekovi koje ste poručili će se prikazati u tabeli.
-                </p>
-                <p>
-                Informacije na broj: O66/049-476 <br>
-                Email: dukic291@gmail.com
-                </p>
-                <div style="height: 200px"></div>
-                <br>
-        
+        <div style="height: 50px"></div>
+        <div class="card border border-1 rounded-5 shadow my-5" style="background-color: lightgray">
+            <div class="card-body p-4 ">
+                <div style="height: 20px"></div>
+                <h1 class="fw-bolder position-absolute start-50 translate-middle">
+                    Snabdevanje knjizare</h1>
+                <div style="height: 30px"></div>
+                <p class="lead fw-semibold position-absolute top-50 start-50 translate-middle "
+                    style="text-align: center">Dobro došli na sajt za
+                    snabdevanje knjižara. <br /> Na ovom sajtu možete se informisati o lekovima koji postoje u apotekama, i mozete naruciti druge lekove.
 
-                <p class="lead mb-0">Srdacan pozdrav</p>
+                    Izborom apoteke za koje naručujete lekove započinjete proces nabavke.
+                    Zatim u okviru kartice lekovi, birate željene lekove i njihove količine i klikom na Završi obavili ste datu narudžbinu.
+                    Lekovi koje ste poručili će se prikazati u tabeli. </p>
+                <div style="height: 120px"></div>
+                <br /><br /><br /><br /><br /><br /><br /><br />
+                <p class="lead mb-0 fw-normal position-absolute start-50 translate-middle" style="text-align: center">
+                    Informacije:
+                    nd20201014@student.fon.bg.ac.rs<br />Kontakt telefon:
+                    +38166-049-476</p>
+                <br /><br />
+
             </div>
         </div>
     </div>
+    
 
 
 
