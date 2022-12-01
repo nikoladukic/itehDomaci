@@ -3,13 +3,16 @@ class Odeljenje
 {
 public $id;
 public $naziv;
+public $fk_lek;
 
 
 
 
-public function __construct($id,$naziv){
+
+public function __construct($id,$naziv,$fk_lek){
     $this->id=$id;
     $this->naziv=$naziv;
+    $this->fk_lek=$fk_lek;
     
 }  
 
