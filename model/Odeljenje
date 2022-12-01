@@ -1,0 +1,17 @@
+<?php
+class Odeljenje
+{
+public $id;
+public $naziv;
+
+
+
+
+public function __construct($id,$naziv){
+    $this->id=$id;
+    $this->naziv=$naziv;
+    
+}  
+
+}
+?>
