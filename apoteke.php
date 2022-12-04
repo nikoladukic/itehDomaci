@@ -4,8 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Apoteka
-    </title>
+    <title>Apoteke</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link href="css/style.css" rel="stylesheet">
@@ -25,13 +24,13 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Pocetna</a>
+                        <a class="nav-link"  href="index.php">Pocetna</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="lekovi.php">Lekovi</a>
+                        <a class="nav-link"  href="#">Lekovi</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="apoteke.php">Apoteka</a>
+                        <a class="nav-link active"  aria-current="page" href="#">Apoteka</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="nabavka.php">Nabavka</a>
@@ -65,26 +64,19 @@
             <div class="card-body p-4 ">
                 <div style="height: 20px"></div>
                 <h1 class="fw-bolder position-absolute start-50 translate-middle">
-                    Snabdevanje apoteka</h1>
+                    Apoteke</h1>
                 <div style="height: 30px"></div>
-                <p class="lead fw-semibold position-absolute top-50 start-50 translate-middle "
-                    style="text-align: center">Dobro došli na sajt za
-                    snabdevanje apoteke. <br /> Na ovom sajtu možete se informisati o lekovima koji postoje u apotekama, i mozete naruciti druge lekove.
-
-                    Izborom apoteke za koje naručujete lekove započinjete proces nabavke.
-                    Zatim u okviru kartice lekovi, birate željene lekove i njihove količine i klikom na Završi obavili ste datu narudžbinu.
-                    Lekovi koje ste poručili će se prikazati u tabeli. </p>
+                
                 <div style="height: 120px"></div>
                 <br /><br /><br /><br /><br /><br /><br /><br />
                 <p class="lead mb-0 fw-normal position-absolute start-50 translate-middle" style="text-align: center">
-                    Informacije:
-                    nd20201014@student.fon.bg.ac.rs<br />Kontakt telefon:
-                    +38166-049-476</p>
+                
                 <br /><br />
 
             </div>
         </div>
     </div>
+  
     
 
 
