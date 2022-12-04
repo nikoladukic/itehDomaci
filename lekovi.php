@@ -30,20 +30,20 @@
                         <a class="nav-link active" aria-current="page" href="#">Lekovi</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="apoteke.php">Apoteka</a>
+                        <a class="nav-link" href="proizvodjac.php">Proizvodjac</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="nabavka.php">Nabavka</a>
+                        <a class="nav-link" href="apoteke.php">Apoteka</a>
                     </li>
+                    
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
                             Izaberi akciju
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Dodaj lek</a></li>
-                            <li><a class="dropdown-item" href="#">Dodaj apoteku</a></li>
-                            <li><a class="dropdown-item" href="#">Naruci</a></li>
+                            <li><a class="dropdown-item" href="dodajLek.php">Dodaj lek</a></li>
+                            <li><a class="dropdown-item" href="dodajApoteku.php">Dodaj apoteku</a></li>
                         </ul>
                     </li>
                     

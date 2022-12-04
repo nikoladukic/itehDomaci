@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Apoteke</title>
+    <title>Apote</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link href="css/style.css" rel="stylesheet">
@@ -27,14 +27,15 @@
                         <a class="nav-link"  href="index.php">Pocetna</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link"  href="#">Lekovi</a>
+                        <a class="nav-link " href="lekovi.php">Lekovi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="proizvodjac.php">Proizvodjac</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active"  aria-current="page" href="#">Apoteka</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="nabavka.php">Nabavka</a>
-                    </li>
+                    
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
@@ -43,7 +44,6 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="dodajLek.php">Dodaj lek</a></li>
                             <li><a class="dropdown-item" href="dodajApoteku.php">Dodaj apoteku</a></li>
-                            <li><a class="dropdown-item" href="naruci.php">Naruci</a></li>
                         </ul>
                     </li>
                     
@@ -64,7 +64,7 @@
             <div class="card-body p-4 ">
                 <div style="height: 20px"></div>
                 <h1 class="fw-bolder position-absolute start-50 translate-middle">
-                    Apoteke</h1>
+                    Apoteka</h1>
                 <div style="height: 30px"></div>
                 
                 <div style="height: 120px"></div>

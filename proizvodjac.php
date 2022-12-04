@@ -27,14 +27,15 @@
                         <a class="nav-link"  href="index.php">Pocetna</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="lekovi.php">Lekovi</a>
+                        <a class="nav-link "  href="lekovi.php">Lekovi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Proizvodjac</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="apoteke.php">Apoteka</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="nabavka.php">Nabavka</a>
-                    </li>
+                    
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
@@ -43,7 +44,6 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="dodajLek.php">Dodaj lek</a></li>
                             <li><a class="dropdown-item" href="dodajApoteku.php">Dodaj apoteku</a></li>
-                            <li><a class="dropdown-item" href="naruci.php">Naruci</a></li>
                         </ul>
                     </li>
                     
@@ -64,7 +64,7 @@
             <div class="card-body p-4 ">
                 <div style="height: 20px"></div>
                 <h1 class="fw-bolder position-absolute start-50 translate-middle">
-                    Nabavka</h1>
+                    Proizvodjac</h1>
                 <div style="height: 30px"></div>
                 
                 <div style="height: 120px"></div>
