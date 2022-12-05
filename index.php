@@ -44,7 +44,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="dodajLek.php">Dodaj lek</a></li>
-                            <li><a class="dropdown-item" href="dodajApoteku.php">Dodaj apoteku</a></li>
+                            <li><a class="dropdown-item" href="dodajProizvodjaca.php">Dodaj proizvodjaca</a></li>
                         </ul>
                     </li>
                     

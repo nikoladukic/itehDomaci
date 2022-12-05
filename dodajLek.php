@@ -43,7 +43,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Dodaj lek</a></li>
-                            <li><a class="dropdown-item" href="dodajApoteku.php">Dodaj apoteku</a></li>
+                            <li><a class="dropdown-item" href="dodajProizvodjaca.php">Dodaj proizvodjaca</a></li>
                         </ul>
                     </li>
                     
@@ -66,9 +66,32 @@
                 <h1 class="fw-bolder position-absolute start-50 translate-middle">
                     Dodaj lek</h1>
                 <div style="height: 30px"></div>
-                
-                <div style="height: 120px"></div>
-                <br /><br /><br /><br /><br /><br /><br /><br />
+                    <form>
+                        <div class="form-group">
+                            <label for="formGroupExampleInput">Naziv leka</label>
+                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Unesite naziv leka">
+                        </div>
+                        <div class="form-group">
+                            <label for="formGroupExampleInput2">Vek trajanja u godinama</label>
+                            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Unesite vek trajanja u godinama">
+                        </div>
+                        <div class="form-group">
+                            <label for="formGroupExampleInput2">Cena</label>
+                            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Unesite cenu">
+                        </div>
+                        <div class="form-group">
+                        <label for="formGroupExampleInput2">Izaberi proizvodjaca</label>
+                        
+                            <select class="form-control">
+                            <option>Izaberi...</option>
+                            </select>
+                        </div>
+                        <br />
+                        <div class="divDugme">
+                        <button type="button" id="buttonDodajLek" class=" btn btn-outline-secondary">Dodaj lek</button>
+                        </div>
+                    </form>
+                <br /><br /><br /><br />
                 <p class="lead mb-0 fw-normal position-absolute start-50 translate-middle" style="text-align: center">
                 
                 <br /><br />

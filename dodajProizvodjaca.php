@@ -43,7 +43,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="dodajLek.php">Dodaj lek</a></li>
-                            <li><a class="dropdown-item" href="#">Dodaj apoteku</a></li>
+                            <li><a class="dropdown-item" href="#">Dodaj proizvodjaca</a></li>
                         </ul>
                     </li>
                     
@@ -64,11 +64,21 @@
             <div class="card-body p-4 ">
                 <div style="height: 20px"></div>
                 <h1 class="fw-bolder position-absolute start-50 translate-middle">
-                    Dodaj apoteku</h1>
+                    Dodaj proizvodjaca</h1>
                 <div style="height: 30px"></div>
-                
-                <div style="height: 120px"></div>
-                <br /><br /><br /><br /><br /><br /><br /><br />
+                <form>
+                        <div class="form-group">
+                            <label for="formGroupExampleInput">Naziv proizvodjaca</label>
+                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Unesite naziv proizvodjaca">
+                        </div>
+                        <div class="form-group">
+                            <label for="formGroupExampleInput2">Drzava porekla</label>
+                            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Unesite drzavu porekla">
+                        </div>
+                        <br />
+                        <button type="button"  class=" btn btn-outline-secondary">Dodaj proizvodjaca</button>
+
+                <br /><br /><br /><br /><br /><br />
                 <p class="lead mb-0 fw-normal position-absolute start-50 translate-middle" style="text-align: center">
                 
                 <br /><br />
