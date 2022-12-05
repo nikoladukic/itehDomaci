@@ -1,7 +1,7 @@
 <?php
 $serverName = "localhost";
-$userName = "Nikola";
-$password = "nikola";
+$userName = "root";
+$password = "";
 
 $link = mysqli_connect($serverName, $userName, $password);
 mysqli_select_db($link, "apotekanikola");

@@ -1,0 +1,18 @@
+[
+    {
+      "zaposleniID": 1,
+      "ime": "Nikola",
+      "prezime": "Dukic"
+    },
+    {
+      "zaposleniID": 2,
+      "ime": "Ana",
+      "prezime": "Vidosavljevic"
+    },
+    {
+      "zaposleniID": 3,
+      "ime": "Pera",    
+      "prezime": "Peric"
+    }
+  ]
+  

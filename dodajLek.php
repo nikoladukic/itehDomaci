@@ -1,3 +1,9 @@
+<?php
+ini_set('include_path', '.;C:\xampp\php\PEAR');
+include('model/Lek.php'); 
+include('dbBroker.php');
+include('model/Proizvodjac.php');
+ ?>
 <!doctype html>
 <html lang="en">
 
@@ -82,7 +88,19 @@
                         <div class="form-group">
                         <label for="formGroupExampleInput2">Izaberi proizvodjaca</label>
                         
-                            <select class="form-control">
+                            <select class="form-control" name="lek">
+                            <?php
+                            $rez = Proizvodjac::getAll($link);
+                            while ($proizvodjac = mysqli_fetch_array($rez)) {
+                                $proizvodjacID = $proizvodjac['prozvodjacID'];
+                                $naziv=$proizvodjac['naziv'];
+                            ?>
+                            <option value="<?php echo $proizvodjacID ?>">
+                                <?php echo $naziv?>
+                            </option>
+                            <?php
+                            }
+                            ?>
                             <option>Izaberi...</option>
                             </select>
                         </div>

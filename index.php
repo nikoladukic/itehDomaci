@@ -1,3 +1,5 @@
+ini_set('include_path', '.;C:\xampp\php\PEAR');
+
 <!doctype html>
 <html lang="en">
 
