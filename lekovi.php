@@ -1,3 +1,19 @@
+<?php
+
+require "dbBroker.php";
+require "model/lek.php";
+session_start();
+$result = Lek::getAll($link);
+if (!$result) {
+    echo "Greska kod upita<br>";
+    die();
+}
+if ($result->num_rows == 0) {
+    echo "Nema lekova";
+    die();
+}
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -62,11 +78,50 @@
         <div style="height: 50px"></div>
         <div class="card border border-1 rounded-5 shadow my-5" style="background-color: lightgray">
             <div class="card-body p-4 ">
+
                 <div style="height: 20px"></div>
                 <h1 class="fw-bolder position-absolute start-50 translate-middle">
                     Lekovi</h1>
+                    <br>
                 <div style="height: 30px"></div>
-                
+                <div class="col-md-8" style="text-align:center; width:99.9%;float:left">
+                    <div class="tabela">
+                        <table class="table table-striped table-dark">
+
+ 
+                            <thead>
+                                <tr>
+                                    
+                                    <th scope="col">Lek id</th>
+                                    <th scope="col">Naziv leka</th>
+                                    <th scope="col">Godina vazenja</th>
+                                    <th scope="col">cena</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                while ($red = $result->fetch_array()) {
+                                ?>
+                                    <tr id="tr-">
+                                        <td><?php echo $red["lekID"] ?></td>
+                                        <td><?php echo $red["naziv"] ?></td>
+                                        <td><?php echo $red["godinaVazenja"] ?></td>
+                                        <td><?php echo $red["cena"] ?></td>
+                                    </tr>
+                                <?php
+                                }
+                                ?>
+                            </tbody>
+                        </table>
+                    </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+
                 <div style="height: 120px"></div>
                 <br /><br /><br /><br /><br /><br /><br /><br />
                 <p class="lead mb-0 fw-normal position-absolute start-50 translate-middle" style="text-align: center">

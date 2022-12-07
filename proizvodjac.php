@@ -1,3 +1,20 @@
+<?php
+
+require "dbBroker.php";
+require "model/proizvodjac.php";
+session_start();
+$result = Proizvodjac::getAll($link);
+if (!$result) {
+    echo "Greska kod upita<br>";
+    die();
+}
+if ($result->num_rows == 0) {
+    echo "Nema proizvodjaca";
+    die();
+}
+?>
+
+
 <!doctype html>
 <html lang="en">
 
@@ -66,9 +83,32 @@
                 <h1 class="fw-bolder position-absolute start-50 translate-middle">
                     Proizvodjac</h1>
                 <div style="height: 30px"></div>
-                
-                <div style="height: 120px"></div>
-                <br /><br /><br /><br /><br /><br /><br /><br />
+                <table class="table table-striped table-dark">
+
+ 
+                            <thead>
+                                <tr>
+                                    
+                                    <th scope="col">ProizvodjacID</th>
+                                    <th scope="col">Naziv proizvodjaca</th>
+                                    <th scope="col">Drzava porekla</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                while ($red = $result->fetch_array()) {
+                                ?>
+                                    <tr id="tr-">
+                                        <td><?php echo $red["proizvodjacID"] ?></td>
+                                        <td><?php echo $red["naziv"] ?></td>
+                                        <td><?php echo $red["drzavaPorekla"] ?></td>
+                                    </tr>
+                                <?php
+                                }
+                                ?>
+                            </tbody>
+                        </table>
+                <br /><br /><br />
                 <p class="lead mb-0 fw-normal position-absolute start-50 translate-middle" style="text-align: center">
                 
                 <br /><br />
