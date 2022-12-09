@@ -76,18 +76,18 @@ include('dbBroker.php');
                 <h1 class="fw-bolder position-absolute start-50 translate-middle">
                     Dodaj lek</h1>
                 <div style="height: 30px"></div>
-                    <form>
+                    <form method="post">
                         <div class="form-group">
                             <label for="formGroupExampleInput">Naziv leka</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Unesite naziv leka">
+                            <input type="text" class="form-control" name="naziv" id="nazivID" placeholder="Unesite naziv leka">
                         </div>
                         <div class="form-group">
                             <label for="formGroupExampleInput2">Vek trajanja u godinama</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Unesite vek trajanja u godinama">
+                            <input type="text" class="form-control" name="godina" placeholder="Unesite vek trajanja u godinama">
                         </div>
                         <div class="form-group">
                             <label for="formGroupExampleInput2">Cena</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Unesite cenu">
+                            <input type="text" class="form-control" name="cena" placeholder="Unesite cenu">
                         </div>
                         <div class="form-group">
                         <label for="formGroupExampleInput2">Izaberi proizvodjaca</label>
@@ -110,14 +110,27 @@ include('dbBroker.php');
                         </div>
                         <br />
                         <div class="divDugme">
-                        <button type="button" id="buttonDodajLek" class=" btn btn-outline-secondary">Dodaj lek</button>
+                        <button type="submit" name="dodajLek" class=" btn btn-outline-secondary">Dodaj lek</button>
                         </div>
                     </form>
+                    <?php
+
+
+                        if (isset($_POST['dodajLek'])) {
+                            if ($_POST['naziv'] !== "" && $_POST['godina'] !== "" && $_POST['cena'] !== "") {
+                                $lek = new Lek($_POST['naziv'], $_POST['godina'], $_POST['cena'], 1);
+                                if(!$lek->postojiLi($link)) {   
+                                $lek->addNew($link);
+                                } else echo "Neuspesno dodavanje leka, vec postoji";
+                            }
+                        }
+
+                        ?>
                 <br /><br /><br /><br />
                 <p class="lead mb-0 fw-normal position-absolute start-50 translate-middle" style="text-align: center">
                 
                 <br /><br />
-
+                   
             </div>
         </div>
     </div>

@@ -1,3 +1,13 @@
+<?php
+include_once('model/Lek.php'); 
+ ?>
+ <?php
+include_once('model/Proizvodjac.php'); 
+ ?>
+<?php
+include('dbBroker.php');
+
+?>
 <!doctype html>
 <html lang="en">
 
@@ -66,18 +76,32 @@
                 <h1 class="fw-bolder position-absolute start-50 translate-middle">
                     Dodaj proizvodjaca</h1>
                 <div style="height: 30px"></div>
-                <form>
+                <form method="post">
                         <div class="form-group">
                             <label for="formGroupExampleInput">Naziv proizvodjaca</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Unesite naziv proizvodjaca">
+                            <input type="text" class="form-control" name="naziv" id="formGroupExampleInput" placeholder="Unesite naziv proizvodjaca">
                         </div>
                         <div class="form-group">
                             <label for="formGroupExampleInput2">Drzava porekla</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Unesite drzavu porekla">
+                            <input type="text" class="form-control"name="drzava" id="formGroupExampleInput2" placeholder="Unesite drzavu porekla">
                         </div>
                         <br />
-                        <button type="button"  class=" btn btn-outline-secondary">Dodaj proizvodjaca</button>
+                        <button  type="submit" name="dodajProizvodjaca"class=" btn btn-outline-secondary">Dodaj proizvodjaca</button>
+                
+                    </form>
+                    <?php
 
+
+                        if (isset($_POST['dodajProizvodjaca'])) {
+                            if ($_POST['naziv'] !== "" && $_POST['drzava'] !=="") {
+                                $proizvodjac = new Proizvodjac($_POST['naziv'], $_POST['drzava']);
+                                if(!$proizvodjac->postojiLi($link)) {   
+                                $proizvodjac->addNew($link);
+                                } else echo "Neuspesno dodavanje leka, vec postoji";
+                            }
+                        }
+
+                        ?>
                 <br /><br /><br /><br /><br /><br />
                 <p class="lead mb-0 fw-normal position-absolute start-50 translate-middle" style="text-align: center">
                 

@@ -77,11 +77,11 @@ if ($result->num_rows == 0) {
     <div class="container">
 
         <div style="height: 50px"></div>
-        <div class="card border border-1 rounded-5 shadow my-5" style="background-color: lightgray">
+        <div >
             <div class="card-body p-4 ">
                 <div style="height: 20px"></div>
                 <h1 class="fw-bolder position-absolute start-50 translate-middle">
-                    Proizvodjac</h1>
+                    Proizvodjaci</h1>
                 <div style="height: 30px"></div>
                 <table class="table table-striped table-dark">
 

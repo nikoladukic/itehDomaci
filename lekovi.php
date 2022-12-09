@@ -76,19 +76,15 @@ if ($result->num_rows == 0) {
     <div class="container">
 
         <div style="height: 50px"></div>
-        <div class="card border border-1 rounded-5 shadow my-5" style="background-color: lightgray">
+        <div >
             <div class="card-body p-4 ">
 
-                <div style="height: 20px"></div>
+                <div style="height: 20px">
                 <h1 class="fw-bolder position-absolute start-50 translate-middle">
                     Lekovi</h1>
-                    <br>
-                <div style="height: 30px"></div>
-                <div class="col-md-8" style="text-align:center; width:99.9%;float:left">
-                    <div class="tabela">
-                        <table class="table table-striped table-dark">
+                    <div style="height: 30px"></div>
+                <table class="table table-striped table-dark">
 
- 
                             <thead>
                                 <tr>
                                     
@@ -112,18 +108,8 @@ if ($result->num_rows == 0) {
                                 }
                                 ?>
                             </tbody>
-                        </table>
-                    </div>
-
-
-
-            </div>
-        </div>
-    </div>
-
-
-                <div style="height: 120px"></div>
-                <br /><br /><br /><br /><br /><br /><br /><br />
+                            </table>
+                <br /><br /><br />
                 <p class="lead mb-0 fw-normal position-absolute start-50 translate-middle" style="text-align: center">
                 
                 <br /><br />
@@ -132,6 +118,7 @@ if ($result->num_rows == 0) {
         </div>
     </div>
   
+    
     
 
 

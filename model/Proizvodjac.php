@@ -23,7 +23,7 @@ class Proizvodjac
 
     public function addNew($baza)
     {
-        $sqlUpit = "INSERT INTO lek(naziv, drzavaPorekla)
+        $sqlUpit = "INSERT INTO proizvodjac(naziv, drzavaPorekla)
       VALUES('$this->naziv', '$this->drzavaPorekla')";
         $rez = mysqli_query($baza, $sqlUpit);
         if ($rez)
