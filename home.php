@@ -1,22 +1,15 @@
+
 <?php
 
-require "dbBroker.php";
-require "model/proizvodjac.php";
+//$_SESSION['loggeduser']
 session_start();
 if (empty($_SESSION['loggeduser']) || $_SESSION['loggeduser'] == '') {
     header("Location: index.php");
     die();
 }
-$result = Proizvodjac::getAll($link);
-if (!$result) {
-    echo "Greska kod upita<br>";
-    die();
-}
-if ($result->num_rows == 0) {
-    echo "Nema proizvodjaca";
-    die();
-}
+
 ?>
+
 
 
 <!doctype html>
@@ -25,7 +18,8 @@ if ($result->num_rows == 0) {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Apoteka</title>
+    <title>Apoteka
+    </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link href="css/style.css" rel="stylesheet">
@@ -45,13 +39,13 @@ if ($result->num_rows == 0) {
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link"  href="home.php">Pocetna</a>
+                        <a class="nav-link active" aria-current="page" href="#">Pocetna</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link "  href="lekovi.php">Lekovi</a>
+                        <a class="nav-link" href="lekovi.php">Lekovi</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Proizvodjac</a>
+                        <a class="nav-link" href="proizvodjac.php">Proizvodjac</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="apoteke.php">Apoteka</a>
@@ -81,46 +75,30 @@ if ($result->num_rows == 0) {
     <div class="container">
 
         <div style="height: 50px"></div>
-        <div >
+        <div class="card border border-1 rounded-5 shadow my-5" style="background-color: lightgray">
             <div class="card-body p-4 ">
                 <div style="height: 20px"></div>
                 <h1 class="fw-bolder position-absolute start-50 translate-middle">
-                    Proizvodjaci</h1>
+                    Snabdevanje apoteka</h1>
                 <div style="height: 30px"></div>
-                <table class="table table-striped table-dark">
+                <p class="lead fw-semibold position-absolute top-50 start-50 translate-middle "
+                    style="text-align: center">Dobro došli na sajt za
+                    snabdevanje apoteke. <br /> Na ovom sajtu možete se informisati o lekovima koji postoje u apotekama, i mozete naruciti druge lekove.
 
- 
-                            <thead>
-                                <tr>
-                                    
-                                    <th scope="col">ProizvodjacID</th>
-                                    <th scope="col">Naziv proizvodjaca</th>
-                                    <th scope="col">Drzava porekla</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php
-                                while ($red = $result->fetch_array()) {
-                                ?>
-                                    <tr id="tr-">
-                                        <td><?php echo $red["proizvodjacID"] ?></td>
-                                        <td><?php echo $red["naziv"] ?></td>
-                                        <td><?php echo $red["drzavaPorekla"] ?></td>
-                                    </tr>
-                                <?php
-                                }
-                                ?>
-                            </tbody>
-                        </table>
-                <br /><br /><br />
+                    Izborom apoteke za koje naručujete lekove započinjete proces nabavke.
+                    Zatim u okviru kartice lekovi, birate željene lekove i njihove količine i klikom na Završi obavili ste datu narudžbinu.
+                    Lekovi koje ste poručili će se prikazati u tabeli. </p>
+                <div style="height: 120px"></div>
+                <br /><br /><br /><br /><br /><br /><br /><br />
                 <p class="lead mb-0 fw-normal position-absolute start-50 translate-middle" style="text-align: center">
-                
+                    Informacije:
+                    nd20201014@student.fon.bg.ac.rs<br />Kontakt telefon:
+                    +38166-049-476</p>
                 <br /><br />
 
             </div>
         </div>
     </div>
-  
     
 
 

@@ -1,3 +1,13 @@
+<?php
+
+session_start();
+if (empty($_SESSION['loggeduser']) || $_SESSION['loggeduser'] == '') {
+    header("Location: index.php");
+    die();
+}
+
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -24,7 +34,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link"  href="index.php">Pocetna</a>
+                        <a class="nav-link"  href="home.php">Pocetna</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link " href="lekovi.php">Lekovi</a>

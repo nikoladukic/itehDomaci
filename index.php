@@ -1,98 +1,91 @@
+<?php
+session_start();
 
-<!doctype html>
-<html lang="en">
+if (isset($_POST['username']) && isset($_POST['password'])) {
+    $name = $_POST['username'];
+    $password = $_POST['password'];
 
+	if($name=="nikola"&&$password=="nikola"){
+	header('Location: home.php');
+	$_SESSION['loggeduser'] = "prijavljen";
+	}else {
+		header('Location: index.php');
+		$_SESSION['loggeduser'] = "";
+
+	}
+}
+?>
+
+
+
+
+
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Apoteka
-    </title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link href="css/style.css" rel="stylesheet">
+	<title>Login Page</title>
+   <!--Made with love by Mutiullah Samim -->
+   
+	<!--Bootsrap 4 CDN-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    <!--Fontawesome CDN-->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+	<!--Custom styles-->
+	<link rel="stylesheet"href="css/login.css">
 </head>
-
 <body>
-    <!-- Navbar content -->
-
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Pocetna</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="lekovi.php">Lekovi</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="proizvodjac.php">Proizvodjac</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="apoteke.php">Apoteka</a>
-                    </li>
-                    
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Izaberi akciju
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="dodajLek.php">Dodaj lek</a></li>
-                            <li><a class="dropdown-item" href="dodajProizvodjaca.php">Dodaj proizvodjaca</a></li>
-                        </ul>
-                    </li>
-                    
-                </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-            </div>
-        </div>
-    </nav>
-    <!-- Page Content -->
-    
-    <div class="container">
-
-        <div style="height: 50px"></div>
-        <div class="card border border-1 rounded-5 shadow my-5" style="background-color: lightgray">
-            <div class="card-body p-4 ">
-                <div style="height: 20px"></div>
-                <h1 class="fw-bolder position-absolute start-50 translate-middle">
-                    Snabdevanje apoteka</h1>
-                <div style="height: 30px"></div>
-                <p class="lead fw-semibold position-absolute top-50 start-50 translate-middle "
-                    style="text-align: center">Dobro došli na sajt za
-                    snabdevanje apoteke. <br /> Na ovom sajtu možete se informisati o lekovima koji postoje u apotekama, i mozete naruciti druge lekove.
-
-                    Izborom apoteke za koje naručujete lekove započinjete proces nabavke.
-                    Zatim u okviru kartice lekovi, birate željene lekove i njihove količine i klikom na Završi obavili ste datu narudžbinu.
-                    Lekovi koje ste poručili će se prikazati u tabeli. </p>
-                <div style="height: 120px"></div>
-                <br /><br /><br /><br /><br /><br /><br /><br />
-                <p class="lead mb-0 fw-normal position-absolute start-50 translate-middle" style="text-align: center">
-                    Informacije:
-                    nd20201014@student.fon.bg.ac.rs<br />Kontakt telefon:
-                    +38166-049-476</p>
-                <br /><br />
-
-            </div>
-        </div>
-    </div>
-    
-
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-        crossorigin="anonymous"></script>
+<div class="container">
+	<div class="d-flex justify-content-center h-100">
+		<div class="card">
+			<div class="card-header">
+				<h3>Sign In</h3>
+				<div class="d-flex justify-content-end social_icon">
+					<span><i class="fab fa-facebook-square"></i></span>
+					<span><i class="fab fa-google-plus-square"></i></span>
+					<span><i class="fab fa-twitter-square"></i></span>
+				</div>
+			</div>
+			<div class="card-body">
+				<form method="POST" action="#">
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-user"></i></span>
+						</div>
+						<input type="text" name ="username"class="form-control" placeholder="username">
+						
+					</div>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-key"></i></span>
+						</div>
+						<input type="password" name="password" class="form-control" placeholder="password">
+					</div>
+					<div class="row align-items-center remember">
+						<input type="checkbox">Remember Me
+					</div>
+					<div class="form-group">
+						<input type="submit" value="Login" class="btn float-right login_btn">
+					</div>
+				</form>
+			</div>
+			<div class="card-footer">
+				<div class="d-flex justify-content-center links">
+					Don't have an account?<a href="#">Sign Up</a>
+				</div>
+				<div class="d-flex justify-content-center">
+					<a href="#">Forgot your password?</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 </body>
-
 </html>
