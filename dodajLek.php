@@ -8,6 +8,16 @@ include_once('model/Proizvodjac.php');
 include('dbBroker.php');
 
 ?>
+<?php
+
+session_start();
+if (empty($_SESSION['ulogovan']) || $_SESSION['ulogovan'] == '') {
+    header("Location: index.php");
+    die();
+}
+
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -52,7 +62,7 @@ include('dbBroker.php');
                             Izaberi akciju
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Dodaj lek</a></li>
+                            <li><a class="dropdown-item" href="#">Dodaj/Izbrisi lek</a></li>
                             <li><a class="dropdown-item" href="dodajProizvodjaca.php">Dodaj proizvodjaca</a></li>
                         </ul>
                     </li>
@@ -66,9 +76,10 @@ include('dbBroker.php');
         </div>
     </nav>
     <!-- Page Content -->
-    
     <div class="container">
+    <div class="row">
 
+    <div class="col-sm-7">
         <div style="height: 50px"></div>
         <div class="card border border-1 rounded-5 shadow my-5" style="background-color: lightgray">
             <div class="card-body p-4 ">
@@ -92,7 +103,7 @@ include('dbBroker.php');
                         <div class="form-group">
                         <label for="formGroupExampleInput2">Izaberi proizvodjaca</label>
                         
-                            <select class="form-control" name="lek" placeholder="Izaberi...">
+                            <select class="form-control" name="lek">
 
                             <?php
                             $rez = Proizvodjac::getAll($link);
@@ -115,10 +126,11 @@ include('dbBroker.php');
                     </form>
                     <?php
 
+                        
 
                         if (isset($_POST['dodajLek'])) {
                             if ($_POST['naziv'] !== "" && $_POST['godina'] !== "" && $_POST['cena'] !== "") {
-                                $lek = new Lek($_POST['naziv'], $_POST['godina'], $_POST['cena'], 1);
+                                $lek = new Lek($_POST['naziv'], $_POST['godina'], $_POST['cena'],$_POST['lek']);
                                 if(!$lek->postojiLi($link)) {   
                                 $lek->addNew($link);
                                 } else echo "Neuspesno dodavanje leka, vec postoji";
@@ -126,7 +138,6 @@ include('dbBroker.php');
                         }
 
                         ?>
-                <br /><br /><br /><br />
                 <p class="lead mb-0 fw-normal position-absolute start-50 translate-middle" style="text-align: center">
                 
                 <br /><br />
@@ -134,14 +145,78 @@ include('dbBroker.php');
             </div>
         </div>
     </div>
-  
     
 
 
+    <div class="col-sm-5">
+    <div style="height: 50px"></div>
+        <div class="card border border-1 rounded-5 shadow my-5" style="background-color: lightblue">
+            <div class="card-body p-4 ">
+                <div style="height: 20px"></div>
+                <h1 class="fw-bolder position-absolute start-50 translate-middle">
+                    Izbrisi lek</h1>
+                    <br />
 
+                    <br />
+
+                <div style="height: 30px">                    
+
+                <form method="post">
+                        
+                            <select class="form-control" name="selectLek">
+
+                            <?php
+                            $rez = Lek::getAll($link);
+                            while ($lek = mysqli_fetch_array($rez)) {
+                                $lekID = $lek['lekID'];
+                                $naziv=$lek['naziv'];
+                            ?>
+                            <option value="<?php echo $lekID ?>">
+                                <?php echo $naziv?>
+                            </option>
+                            <?php
+                            }
+                            ?>
+                            </select>
+                        </div>
+                        <br />
+                        <div class="divDugme">
+                        
+                            <button type="submit" name="delete" class=" btn btn-outline-secondary">Izbrisi lek</button>
+                            <br />
+                        </div>
+                    </form>
+                            
+
+
+                        
+
+                        
+                    </div>
+            </div>
+        </div>
+
+
+    </div>
+    </div>
+
+    </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
 </body>
 
 </html>
+
+<?php
+
+if (isset($_POST['delete'])) {
+    $vrednost = $_POST['selectLek'];
+    Lek::deleteById($link, $vrednost);
+}
+
+?>
+
+
+

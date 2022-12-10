@@ -47,12 +47,12 @@ class Lek
         }
     }
 
-    public function deleteById($baza, $lekID)
+    public static function deleteById($baza, $lekID)
     {
         $sqlUpit = "DELETE FROM lek WHERE lekID = $lekID";
         $rez = mysqli_query($baza, $sqlUpit);
         if ($rez)
-            echo "Uspecno obrisan lek" . '<br>';
+            echo "Uspesno obrisan lek" . '<br>';
         else
             echo "Greska pri brisanju leka" . '<br>';
     }
@@ -70,12 +70,12 @@ class Lek
         return false;
     }
     // VRACAM ID ZA LEK
-     static function vratiIDLeka($baza, $nazivLeka)
+     static function vratiIDLeka($baza)
      {
         $rez = self::getAll($baza);
         while($lek = mysqli_fetch_array($rez))
         {
-          if($lek['ime'] == $nazivLeka )
+          if($lek['ime'] == $naziv )
               return $lek['lekID'];
         }
 

@@ -7,10 +7,10 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 
 	if($name=="nikola"&&$password=="nikola"){
 	header('Location: home.php');
-	$_SESSION['loggeduser'] = "prijavljen";
+	$_SESSION['ulogovan'] = "prijavljen";
 	}else {
 		header('Location: index.php');
-		$_SESSION['loggeduser'] = "";
+		$_SESSION['ulogovan'] = "";
 
 	}
 }

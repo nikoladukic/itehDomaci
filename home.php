@@ -1,9 +1,8 @@
 
 <?php
 
-//$_SESSION['loggeduser']
 session_start();
-if (empty($_SESSION['loggeduser']) || $_SESSION['loggeduser'] == '') {
+if (empty($_SESSION['ulogovan']) || $_SESSION['ulogovan'] == '') {
     header("Location: index.php");
     die();
 }
@@ -57,7 +56,7 @@ if (empty($_SESSION['loggeduser']) || $_SESSION['loggeduser'] == '') {
                             Izaberi akciju
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="dodajLek.php">Dodaj lek</a></li>
+                            <li><a class="dropdown-item" href="dodajLek.php">Dodaj/Izbrisi lek</a></li>
                             <li><a class="dropdown-item" href="dodajProizvodjaca.php">Dodaj proizvodjaca</a></li>
                         </ul>
                     </li>
